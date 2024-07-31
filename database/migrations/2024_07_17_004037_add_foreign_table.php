@@ -14,8 +14,8 @@ return new class extends Migration
         // add foreign keys on table users
         Schema::table('users', function (Blueprint $table) {
             //
-            $table->foreignId('profile_id')->constrained();
-            $table->foreignId('role_id')->constrained();
+            $table->foreignId('default')->constrained();
+            $table->foreignId('default')->constrained();
         });
         // add foreign keys on table film
         Schema::table('films', function (Blueprint $table) {
@@ -40,10 +40,10 @@ return new class extends Migration
     {
         // drop foreign on table users
         Schema::table('users', function (Blueprint $table) {
-            $table->dropForeign(['profile_id']);
-            $table->dropForeign(['role_id']);
+            $table->dropForeign(['default']);
+            $table->dropForeign(['default']);
             $table->dropColumn('profile_id');
-            $table->dropColumn('role_id');
+            $table->dropColumn('ro  le_id');
         });
         // drop foreign on table films
         Schema::table('films', function (Blueprint $table) {
